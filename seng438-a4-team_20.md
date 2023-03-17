@@ -15,6 +15,65 @@ Lab 4 for SENG 438 requires us to apply the concepts of both mutation and GUI te
 GUI testing will similarly use tools, specifically Selenium web-interface testing tool as well as Sikulix to create automated GUI testing as well as manual testing. This will involve testing at least one of the websites: Costco page, Ikea page or Amazon page. Ultimately, we will create UI test cases (8) and then automate them using Selenium and then report how it fares against Sikulix.
 
 # Analysis of 10 Mutants of the Range class 
+1. Incremented (a++) double local variable 
+
+This mutation is created when pitest modifies the source code by imcrementing the specified local variable which is of type double by 1 after it is passed, basically post increments the variable. To give an instance if the double x = 1 it would be mutated to double x = 2.
+
+In our original test suite this mutation was killed in some test cases and in others it survived. We believe that the mutation survived in some cases beacuse the change lasted throughout the method and the mutation was killed if the change was overwritten by future code in the method before the return statement.
+
+2. Decremented (--a) double local variable 
+
+This mutation is created when pitest modifies the source code by decrementing the specified local variable which is of type double by 1 after it is passed, basically pre decrements the variable. To give an instance if the double x = 2 it would be mutated to double x = 1.
+
+In our original test suite this mutation was killed in some test cases and in others it survived. We believe that the mutation survived in some cases beacuse the change lasted throughout the method and the mutation was killed if the change was overwritten by future code in the method before the return statement. 
+
+3. Replaced return value with null 
+
+This mutation is created by pitest by replacing the return value of a method with null. For instance if range values are supposed to be returned from a method, it returns null instead. 
+
+This mutant was killed in many instances in our original test suite beacuse of the assert statements that were written to check if the appropriate numerical values was returned for the range methods.  
+
+4. Negated conditional 
+
+This mutation is created when pitest modifies the source code to negate a condition statement. For instance if the the condition was if(upper < lower) it would be mutated to if(!(upper < lower)
+
+In our original test suite this mutation was not killed for any methods because we did not have any branch coverage. To improve the mutation coverage we included tests that had branch coverage which in turn would catch these mutations for the methods we wrote the test for. 
+
+5. Not equal to equal 
+
+This mutation is created when pitest changes the "!=" operator to "==" operator or just removed the "!" operator if it is present in the source code. AN instance of this would be if(x!=0) being changed to if(x==0). 
+
+In our original test suite this mutation was not killed for any methods because we did not have any branch coverage. To improve the mutation coverage we included tests that had branch coverage which in turn would catch these mutations for the methods we wrote the test for. 
+
+6. Replaced double division with multipication
+
+This mutant is created when pitest substitutes the division operator with the multiplication operator. For example x / 1.0 becomes x * 1.0. 
+
+This mutation was killed in our original test suite for most methods because the return values were altered making the test cases able to catch them.
+
+7. Lesser than to equal
+
+This mutation is created by pitest when it changes the lesser than operator to the equality operator. For instance if(x < 5) becomes if (x == 5). 
+
+In our original test suite this mutation was killed beacuse we had boundary coverage for all methods making the muatations detectable and be able to be killed.
+
+8. Greater than to equal
+
+This mutation is created by pitest when it changes the greater than operator to the equality operator. For instance if(x > 5) becomes if (x == 5). 
+
+In our original test suite this mutation was killed beacuse we had boundary coverage for all methods making the muatations detectable and be able to be killed.
+
+9. Replaced double division with modulus 
+
+This mutation is created when pitest alters the source code by substituting the division operator with the modulus operator. For instance x / 2.0 becomes x % 2.0.
+
+This mutation was killed in our original test suite for most methods because the return values were altered making the test cases able to catch them.
+
+10. Replaced double division with addition 
+
+This mutation is created when pitest alters the source code by substituting the division operator with the addition operator. For instance x / 2.0 becomes x + 2.0.
+
+This mutation was killed in our original test suite for most methods because the return values were altered making the test cases able to catch them.
 
 # Report all the statistics and the mutation score for each test class
 
