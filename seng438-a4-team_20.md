@@ -10,7 +10,9 @@
 | Markosch Saure | 30088690 |
 
 # Introduction
+Lab 4 for SENG 438 requires us to apply the concepts of both mutation and GUI testing that we have learned during lectures. We know that mutation testing is injecting bugs (mutants) into our SUT and then testing those mutants against our existing test suite (assignment 2 and 3) to see how effective it is in terms of the mutation score and if we can effectively "kill" the mutants, and will use tools such as PIT to aid us with this.
 
+GUI testing will similarly use tools, specifically Selenium web-interface testing tool as well as Sikulix to create automated GUI testing as well as manual testing. This will involve testing at least one of the websites: Costco page, Ikea page or Amazon page. Ultimately, we will create UI test cases (8) and then automate them using Selenium and then report how it fares against Sikulix.
 
 # Analysis of 10 Mutants of the Range class 
 
@@ -21,10 +23,47 @@
 # Analysis drawn on the effectiveness of each of the test classes
 
 # A discussion on the effect of equivalent mutants on mutation score accuracy
+We know that the mutation score is calculated as:
+```
+Mutation Score = (# of mutants killed by the test suite) 
+                  -------------------------------------
+                  (# of all non-equivalent mutants)
+```
+
+As an example, let's say we have 100 mutants:
+50 of which are killed
+25 of which are alive
+25 of which are equivalent
+
+Then by applying the formula above we get: 50/75 = 67% (mutation score)
+
+As such, we see that equivalent mutants as discussed in lectures are a type of mutation that we want to avoid and it is not even considered as part of our mutation score. We then conclude that equivalent mutatns don't have impact on our mutation score accuracy as it is not taken into account when doing the calculation.
+
+Detection of equivalent mutants is difficult because they are semantically equivalent to the original program and only really differ in terms of syntax. We believe that equivalent mutation detection may come in the form of seeing if our boundary-value testing can detect them or not because in some cases an equivalent mutant may be killed if it is tested against a test case which contains some form of boundary value. 
 
 # A discussion of what could have been done to improve the mutation score of the test suites
 
+We know that to increase our mutation score we need to kill more mutants overall within our test suite, as the formula below outlines. We also understood that there can be a very large combination of mutants and their types that can be generated using our tools so it would not be feasible to try generating many different mutants and trying to change or add test cases each and every time, which is why we've adopted a more refined design strategy.
+
+```
+Mutation Score = (# of mutants killed by the test suite) 
+                  -------------------------------------
+                  (# of all non-equivalent mutants)
+```
+
+
+Our design strategy involves firstly looking at the SUT to see where exactly there can be possible mutations and then looking at out existing test suite to see if theoretically it can kill the mutants or not. Once we've pointed out some areas of improvement, we go ahead and either change an existing test case or create a new test case to "kill" a potential mutation. After we have done this, we then test it against the generated mutants and by doing that we are able to increase our mutation score.
+
 # Why do we need mutation testing? Advantages and disadvantages of mutation testing
+We need mutation testing so see if our test suite can detect majority of the bugs, whereas with black-box and white-box testing that is primarily if it covers most of the specification (code/data). In essence, coverage testing does not ensure the quality of testing, it is a good measure of coverage criteria, which is why mutation testing is needed to stress test our suite against mutants.
+
+Advantages of Mutation Testing:
+
+Mutation testing can be automated and systematic - it is relatively easy to set up and also use with an effective mutation test tool. Mutation scores are also an excellent way of assessing the adequacy/quality of our test suite. The mutation score is essentially our "fault detection power", meaning that we can compare different suites and different techniques to see which of them yields us the best results.
+
+Disadvantages of Mutation testing:
+
+A more obvious disadvantage for mutation testing comes with equivalent mutants - mutants that are syntactially different but semantically produce the same result. We can see that the mutation score does not account for equivalent mutants either, and these are mutants that are much harder to kill comparatively. We have learned that equivalent mutation detection is in theory possible to do, but it is considered an "undecidable" problem. There can also be a case where we have a significantly large number of mutants which will require further resources.
 
 # Explain your SELENUIM test case design process
 
