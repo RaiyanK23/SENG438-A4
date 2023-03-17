@@ -67,9 +67,25 @@ A more obvious disadvantage for mutation testing comes with equivalent mutants -
 
 # Explain your SELENUIM test case design process
 
+Test cases were developed considering the most general functions of the website (Amazon) while including some less popular use cases to create a holisitic test suite. The functionalities that we determined to be most popular were log-in/log-off, searching and adding/deleting items to the cart, and changing the delivery address and preferred country site, with more niche cases including editing the bio of the logged in user.
+
+The steps included in the test case avoided as many mouse-over commands as possible, as Selenium's recording process is not completely reliable and may overlook any mouse-over actions during the recording.
+
 # Explain the use of assertions and checkpoints
 
+Assertions (verify text/element) were used at the end of each test on an element that should be present at the end of every functionality that is tested. For example, when logging in onto Amazon, "Hello <Username>" will show on the top-right corner, and we use the verify text command to check if the test passed.
+
 # how did you test each functionaity with different test data
+  
+The method on how each functionality is tested with different data is shown below:
+- Login: use correct login information vs. incorrect data
+- Logoff: N/A
+- Search Item: search 2 different items
+- Add Item to Cart: add 2 different items
+- Change Address: use 2 different addresses
+- Change Country: use 2 different countries
+- Delete Item From Cart: N/A
+- Change Profile Bio: use 2 different bio texts
 
 # Discuss advantages and disadvantages of Selenium vs. Sikulix
 Advantages of Selenium:
