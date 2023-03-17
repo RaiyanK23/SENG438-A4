@@ -72,10 +72,33 @@ A more obvious disadvantage for mutation testing comes with equivalent mutants -
 # how did you test each functionaity with different test data
 
 # Discuss advantages and disadvantages of Selenium vs. Sikulix
+Advantages of Selenium:
+
+    Cross-platform compatibility: Selenium supports multiple programming languages and can be run on different operating systems like Windows, Mac, and Linux.
+    Robust framework: Selenium provides a robust testing framework that can be used for different types of web applications.
+
+Disadvantages of Selenium:
+
+    Complex setup: Selenium requires a complex setup process, and it can take some time to configure.
+    Limited support for desktop applications: Selenium is primarily used for web application testing and has limited support for desktop applications.
+
+Advantages of SikuliX:
+
+    Easy to use: SikuliX is easy to use, and testers can automate test cases using simple visual recognition.
+    Image-based automation: SikuliX provides image recognition capabilities, allowing testers to automate scenarios that are difficult to automate using Selenium.
+
+Disadvantages of SikuliX:
+
+    Limited support for web applications: SikuliX is primarily used for desktop application testing and has limited support for web applications.
+    Lack of cross-platform compatibility: SikuliX is only compatible with the Java platform and does not support other programming languages.
 
 # How the team work/effort was divided and managed
 
+The teamwork was divided between both the coding and report. We used pair-programming and paired up with one member telling the other the instructions to execute and having the other person execute those tools/commands. Split up the different test causes/suite amongst our two classes. For the report we split the different sections up amongst us.
+
 
 # Difficulties encountered, challenges overcome, and lessons learned
+The initial setup of the lab was difficult, as for some reason the tool kept showing errors so there was some initial debugging required on our end to get Pitest and other tools to work. Creating better test cases for mutation testing was also challenging, as we had to thoroughly look at our test suite for any weaknesses and try our best to come up with as big of a mutation score as possible. Overall, we learned that software testing would not be complete without mutation testing, and that web/GUI testing is an excellent way to test user/client-side interfaces.
 
 # Comments/feedback on the lab itself
+Instructions were easy to follow, so no comments or feedback from us.
