@@ -77,7 +77,9 @@ This mutation was killed in our original test suite for most methods because the
 
 # Report all the statistics and the mutation score for each test class
 
+<img width="1443" alt="Screenshot 2023-03-16 at 6 14 10 PM" src="https://user-images.githubusercontent.com/71629902/225974792-8dc7ae0c-9697-4fd8-bd97-9f439d38fabe.png">
 
+<img width="870" alt="Screenshot 2023-03-17 at 8 08 18 AM" src="https://user-images.githubusercontent.com/71629902/225974816-aaf66afa-6438-4c56-be0c-ab242bcf3748.png">
 
 # Analysis drawn on the effectiveness of each of the test classes
 
