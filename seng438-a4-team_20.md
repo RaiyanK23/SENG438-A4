@@ -81,7 +81,10 @@ This mutation was killed in our original test suite for most methods because the
 
 <img width="870" alt="Screenshot 2023-03-17 at 8 08 18 AM" src="https://user-images.githubusercontent.com/71629902/225974816-aaf66afa-6438-4c56-be0c-ab242bcf3748.png">
 
+
+
 # Analysis drawn on the effectiveness of each of the test classes
+When performing mutation testing we can look at the effectiveness scores of each test class as a way to grade how good our test cases were made. By looking at the percentage we know the ratio of mutants killed by the test suite in relation to the amount generated. In an ideal situation, we want as many of the created mutants to be killed by our test cases. In our case we designed test cases for the Data Utilities class which covered above the majority of created mutants. Where as for the Range class we were only able to cover a minority of the possible mutants created. From previous reviews we came to the concludion and found that are coverage for both classes is quite high, but here these results signify that the data utilities class is capable of catching mutants better than the Range class. Altogether this shows us that, even though there might be a good range of coverage for classes, there still can be the need for some test cases that can properly detect mutants(bugs). 
 
 # A discussion on the effect of equivalent mutants on mutation score accuracy
 We know that the mutation score is calculated as:
